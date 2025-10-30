@@ -1,0 +1,157 @@
+:root {
+  --bg: #0f172a;
+  --surface: #24314e;
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+  --link: #38bdf8;
+  --accent: #22c55e;
+}
+
+* {
+  box-sizing: border-box
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6
+}
+
+
+.site-header {
+  background: var(--surface);
+  padding: 1rem
+}
+
+
+.content {
+  padding: 1rem;
+  max-width: 72ch
+}
+
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-start;
+  align-items: center;
+  gap: 1rem;
+  padding: 0
+}
+
+.nav-list a {
+  color: var(--link);
+  text-decoration: none
+}
+
+.nav-list a[aria-current="page"] {
+  font-weight: 700
+}
+
+
+/* Skip link with enhanced visibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--accent-color);
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+
+    text-decoration: none;
+    width: 250px;
+    height: auto;
+    color: white;
+    border: 1px solid rgb(14, 14, 14);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.8);
+    padding: 20px;
+    overflow: hidden;
+    
+}
+    
+
+.card-info-emil .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.left {
+  left: 10px;
+  border-radius: 10%;
+}
+
+.right {
+  right: 10px;
+  border-radius: 10%;
+}
+
+.card-info-emil {
+    position: relative;
+    background-image: url(images/home.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.card-info-iris {
+    position: relative;
+    background-image: url(images/home.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.card-info-jennifer {
+    background-image: url(bild);
+    background-size: cover;
+    background-position: center;
+}
+
+.card-info-julia {
+    background-image: url(images/italy.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+@media (min-width: 668px) and (max-width: 1023px) {
+  .card-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+  .card-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+

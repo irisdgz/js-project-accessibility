@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +7,183 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <p>This is the starting point.</p>
-    <script src="js/main.js"></script>
-  </body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header"> 
+      <h1>About</h1>
+      <nav role="navigation" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+<section id="user-info">
+        <h2>Your information</h2>
+        <form id="user-info-form">
+          <div class="form-control">
+            <label for="name">Name:</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required 
+              aria-required="true"
+               />
+          </div>
+          <div class="form-control">
+            <label for="email">Email:</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required 
+              aria-required="true"
+               />
+          </div>
+          <div class="form-control">
+            <button typ="submit">Continue to quiz</button>
+          </div>
+        </form>
+      </section>
+
+   <section id="quiz">
+        <h2>titel for quiz</h2>
+        <form id="quiz-questions">
+          <fieldset>
+            <legend>
+              How many nimals does Emil have?
+            </legend>
+            <div class="radio-group">
+              <input 
+                type="radio" 
+                name="alternative" 
+                id="emil-1" 
+                value="7" 
+                />
+              <label for="emil-1">7</label>
+            </div>
+            <div class="radio-group">
+              <input 
+                type="radio" 
+                name="alternative" 
+                id="emil-2" 
+                value="11" 
+                />
+              <label for="emil-2">11</label>
+            </div>
+            <div class="radio-group">
+              <input 
+                type="radio" 
+                name="alternative" 
+                id="emil-3" 
+                value="3" />
+              <label for="emil-3">3</label> 
+          </fieldset>
+          <fieldset>
+            <legend>
+              What is Iris favorite hobby?
+            </legend>
+            <div class="radio-group">
+              <input 
+                type="radio" 
+                name="alternative" 
+                id="iris-1" 
+                value="origami" 
+                />
+              <label for="Iris-1">Origami</label>
+            </div>
+            <div class="radio-group">
+              <input 
+                type="radio" 
+                name="alternative" 
+                id="iris-2" 
+                value="property browsing" 
+                />
+              <label for="Iris-2">Property browsing </label>
+            </div>
+            <div class="radio-group">
+              <input 
+                type="radio" 
+                name="alternative" 
+                id="Iris-3" 
+                value="traveling" />
+              <label for="iris-3">Traveling</label> 
+          </fieldset>
+          <fieldset>
+            <legend>
+              What is Jennifer's favorite color?
+            </legend>
+            <div class="radio-group">
+              <input 
+                type="radio" 
+                name="alternative" 
+                id="jennifer-1" 
+                value="pink" 
+                />
+              <label for="jennifer-1">Pink</label>
+            </div>
+            <div class="radio-group">
+              <input 
+                type="radio" 
+                name="alternative" 
+                id="jennifer-2" 
+                value="blue" 
+                />
+              <label for="jennifer-2">Blue</label>
+            </div>
+            <div class="radio-group">
+              <input 
+                type="radio" 
+                name="alternative" 
+                id="jennifer-3" 
+                value="purple" />
+              <label for="jennifer-3">Purple</label>
+          </fieldset>
+          <fieldset>
+            <legend>
+              How old is Julia?
+            </legend>
+            <div class="radio-group">
+              <input 
+                type="radio" 
+                name="alternative" 
+                id="julia-1" 
+                value="25" 
+                />
+              <label for="julia-1">25</label>
+            </div>
+            <div class="radio-group">
+              <input 
+                type="radio" 
+                name="alternative" 
+                id="julia-2" 
+                value="30" 
+                />
+              <label for="julia-2">30</label>
+            </div>
+            <div class="radio-group">
+              <input 
+                type="radio" 
+                name="alternative" 
+                id="julia-3" 
+                value="35" />
+              <label for="julia-3">35</label> 
+          </fieldset>
+          
+          
+          <button type="submit">Submit answer</button>
+        </form>
+      </section>
+
+      <section id="results" hidden>
+        <h2>Thank you</h2>
+        <div id="results-content"></div>
+      </section>   
+
+
+  <script src="js/main.js"></script>
+</body>
 </html>

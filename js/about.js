@@ -5,20 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
     "./images/kanin.png"
   ];
 
-    const descriptions = [
-    "Maya – Emils hund.",
-    "Dessie – Emils katt.",
-    "Pampam – Emils kanin."
-    ];
-
   let currentIndex = 0;
 
   const imgElement = document.querySelector(".card-info-emil img");
-  const descElement = document.querySelector(".card-info-emil .desc");
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
  
-  if (!imgElement || !descElement) return;
+  if (!imgElement) {
+    console.warn("Ingen <img> hittades i .card-info-emil — bildspelet körs inte.");
+    return;
+  }
 
   function updateImage() {
     console.log("Byter till:", images[currentIndex]);

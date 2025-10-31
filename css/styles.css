@@ -267,7 +267,7 @@ img {
 
 /* Quiz Section Styles */
 #quiz:not([hidden]) {
-  display: flex;
+  display: block;
   flex-direction: column;
   align-items: center;
   padding: 24px 16px;
@@ -275,6 +275,7 @@ img {
   line-height: 1;
   color: var(--text);
   text-align: left;
+  width: 100%;
 }
 
 #quiz h2 {
@@ -288,19 +289,20 @@ img {
 
 /* Fieldsets (boxes around questions) */
 fieldset {
+  width: 100%;
+  border: 2px solid var(--link);
   border-radius: 10px;
-  padding: 16px 20px; /* space inside each box */
-  margin-bottom: 26px; /* space between boxes */
-  width: 800px;
-  max-width: 100%;
+  padding: 16px 20px;
+  margin-bottom: 26px;
   box-sizing: border-box;
 }
+
 
 /* Legends (question titles) */
 legend {
   font-size: 18px;
   margin-bottom: 16px;
-  color: var(--link);
+  color: var(--text);
   font-weight: 600;
 }
 

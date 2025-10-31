@@ -51,8 +51,9 @@ body {
 /*Navigation bar*/
 .site-header {
   background: var(--bg);
-  border-bottom: 1px solid var(--border);
+  border-bottom: px solid var(--border);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  
 
 }
 
@@ -98,10 +99,13 @@ a:hover {
   flex-direction: column;
   align-items: center;
   border: 2px solid #38bdf8;
-  padding: 20px;
   border-radius: 10px;
   color: #38bdf8;
+  padding: 24px 16px;   
+  margin: 32px 16px;    
+  box-sizing: border-box;
 }
+
 
 #user-info-form {
   color: #f8fafc;
@@ -111,6 +115,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   padding-bottom: 20px;
+  
 }
 
 .submit-btn {
@@ -296,7 +301,6 @@ fieldset {
   margin-bottom: 26px;
   box-sizing: border-box;
 }
-
 
 /* Legends (question titles) */
 legend {

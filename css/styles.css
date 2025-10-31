@@ -1,10 +1,15 @@
 :root {
-  --bg: #0f172a;
-  --surface: #24314e;
+  --bg: #1e2842;
+  --surface: #111827;
   --text: #f8fafc;
   --muted: #cbd5e1;
   --link: #38bdf8;
   --accent: #22c55e;
+  --focus-outline: 1px solid var(--link);
+  --border: #84B9E4;
+  --nav-hover: #4a4a7a;
+  --card-hover: #0db9fd;
+  
 }
 
 * {
@@ -19,45 +24,12 @@ body {
   line-height: 1.6
 }
 
-
-.site-header {
-  background: var(--surface);
-  padding: 1rem
-}
-
-
-.content {
-  padding: 1rem;
-  max-width: 72ch
-}
-
-
-.nav-list {
-  list-style: none;
-  display: flex;
-  justify-content: space-start;
-  align-items: center;
-  gap: 1rem;
-  padding: 0
-}
-
-.nav-list a {
-  color: var(--link);
-  text-decoration: none
-}
-
-.nav-list a[aria-current="page"] {
-  font-weight: 700
-}
-
-
 /* Skip link with enhanced visibility */
 .skip-link {
   position: absolute;
   top: -40px;
-  left: 0;
-  background: var(--accent-color);
-  color: white;
+  right: 0;
+  color: var(--text);
   padding: 8px;
   z-index: 100;
   transition: top 0.3s;
@@ -69,31 +41,127 @@ body {
   outline-offset: 2px;
 }
 
+/* Enhanced focus styles on elements*/
+:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/*Navigation bar*/
+.site-header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+
+}
+
+.site-header h1 {
+  font-size: 30px;
+  padding: 10px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 1rem;
+  text-decoration: none;
+  list-style: none;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text);
+  padding: 10px;
+  border: 1px solid transparent;
+}
+
+a:hover {
+  border-color: #84B9E4;
+  border-radius: 10px;
+}
+
+.nav-list a[aria-current="page"] {
+  font-weight: 700
+}
+
+.site-header h1 {
+  font-size: 30px;
+  padding: 10px;
+}
+
+/* Form */
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #38bdf8;
+  padding: 20px;
+  border-radius: 10px;
+  color: #38bdf8;
+}
+
+#user-info-form {
+  color: #f8fafc;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.submit-btn {
+  color: #0f172a;
+  border-radius: 10px;
+  padding: 5px 8px;
+  font-size: 17px;
+}
+
+/* About our team text*/
+.about-intro {
+  max-width: 720px;
+  margin: 2rem auto;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.about-intro h2 {
+  margin: 0 0 .5rem 0;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.about-intro p {
+  margin: 0 auto;
+  color: var(--text);
+}
+
+
 .card-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-content: center;
-    gap: 12px;
-    padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .card {
     display: flex;
     flex-direction: column;
-
     text-decoration: none;
-    width: 250px;
+    width: 300px;
     height: auto;
     color: white;
-    border: 1px solid rgb(14, 14, 14);
+    border: 1px solid #AE8625;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.8);
     padding: 20px;
     overflow: hidden;
-    
 }
     
-
 .card-info-emil .arrow {
   position: absolute;
   top: 50%;
@@ -117,41 +185,160 @@ body {
   border-radius: 10%;
 }
 
+img {
+  width: 240px;
+  height: 240px;
+  border-radius: 10px;
+  align-self: center;
+  object-fit: cover;
+  object-position: top;
+  margin-top: auto;
+}
+
+#card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .card-info-emil {
     position: relative;
-    background-image: url(images/home.png);
+   /* background-image: url(../images/hund.png); */
     background-size: cover;
     background-position: center;
+}
+
+.card-info-emil:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 38px rgb(21, 134, 1);
 }
 
 .card-info-iris {
     position: relative;
-    background-image: url(images/home.png);
+    /*background-image: url(images/home.png);*/
     background-size: cover;
     background-position: center;
+}
+
+.card-info-iris:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 38px palevioletred;
 }
 
 .card-info-jennifer {
-    background-image: url(bild);
-    background-size: cover;
-    background-position: center;
+  /*background-image: url(/images/JJ.jpg);*/
+  background-size: cover;
+  background-position: center;
+}
+
+.card-info-jennifer:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 38px var(--card-hover);
 }
 
 .card-info-julia {
-    background-image: url(images/italy.jpg);
     background-size: cover;
     background-position: center;
 }
 
-@media (min-width: 668px) and (max-width: 1023px) {
+.card-info-julia:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 38px orange;
+}
+
+@media (min-width: 668px) and (max-width: 1099px) {
   .card-container {
       grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1100px) {
   .card-container {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
+@media (max-width: 574px) {
+  .card-container {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+}
+
+/* Quiz Section Styles */
+#quiz:not([hidden]) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 32px;
+  margin-top: 40px;
+  line-height: 1;
+  color: var(--text);
+  text-align: left;
+}
+
+#quiz h2 {
+  margin-bottom: 40px; /* space below title */
+  font-size: 30px;
+  letter-spacing: 0.4px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Fieldsets (boxes around questions) */
+fieldset {
+  border-radius: 10px;
+  padding: 22px 30px; /* space inside each box */
+  margin-bottom: 30px; /* space between boxes */
+  width: 800px;
+  max-width: 100%;
+}
+
+/* Legends (question titles) */
+legend {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: var(--link);
+  font-weight: 600;
+}
+
+/* Radio options */
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* space between radio and label */
+  margin: 20px 0; /* space between each option */
+}
+
+.radio-group input[type="radio"] {
+  transform: scale(1.25); 
+  accent-color: var(--link);
+  cursor: pointer;
+}
+
+.radio-group label {
+  font-size: 17px;
+  color: var(--text);
+
+}
+
+/* For larger screens */
+@media (min-width: 768px) {
+  #quiz {
+    padding: 56px 48px;
+  }
+
+  fieldset {
+    padding: 38px 32px;
+    margin-bottom: 48px;
+  }
+
+  legend {
+    font-size: 22px;
+  }
+
+  .radio-group {
+    margin: 24px 0;
+  }
+}

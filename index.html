@@ -7,81 +7,99 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to main content</a>
+ <a href="#main-content" class= "skip-link">Skip to main content</a>
 
+ <!--Navigation bar-->
     <header class="site-header"> 
-      <h1>About</h1>
+      <div class="header-content">
+      <h1>Welcome to our Quiz</h1>
       <nav role="navigation" aria-label="Main navigation">
         <ul class="nav-list">
           <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
       </nav>
+      </div>
     </header>
 
-    <main id="main-content">
-<section id="user-info">
-        <h2>Your information</h2>
-        <form id="user-info-form">
-          <div class="form-control">
-            <label for="name">Name:</label>
-            <input 
-              type="text" 
-              id="name" 
-              name="name" 
-              required 
-              aria-required="true"
-               />
-          </div>
-          <div class="form-control">
-            <label for="email">Email:</label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email" 
-              required 
-              aria-required="true"
-               />
-          </div>
-          <div class="form-control">
-            <button typ="submit">Continue to quiz</button>
-          </div>
-        </form>
-      </section>
+ <!--information form-->
+  <main id="main-content">
+    <section class="user-info">
+      <h2>Your information</h2>
+      <form id="user-info-form">
+        <div class="form-control">
+          <label for="name">Name:</label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            required 
+            aria-required="true" 
+            placeholder="Firstname Lastname" 
+            autocomplete="on"
+            />
+        </div>
+        <div class="form-control">
+          <label for="email">Email:</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            size="35" 
+            required 
+            aria-required="true"
+            placeholder="example@example.com" 
+            autocomplete="on"
+            />
+        </div>
 
-   <section id="quiz">
-        <h2>titel for quiz</h2>
+      <div class="form-control">
+        <button 
+          class="submit-btn" 
+          type="submit">
+          Continue to quiz
+      </button>
+      </div>
+    </form>
+  </section>
+
+ <!--Quiz-->
+      <section id="quiz" hidden>
+        <h2>Quick Quiz</h2>
         <form id="quiz-questions">
           <fieldset>
+            <!-----------  Emil  ----------->
             <legend>
-              How many nimals does Emil have?
+              How many animals does Emil have?
             </legend>
             <div class="radio-group">
               <input 
                 type="radio" 
-                name="alternative" 
+                name="answer-1" 
                 id="emil-1" 
-                value="7" 
+                value="wrong" 
+                required
                 />
               <label for="emil-1">7</label>
             </div>
             <div class="radio-group">
               <input 
                 type="radio" 
-                name="alternative" 
+                name="answer-1" 
                 id="emil-2" 
-                value="11" 
+                value="wrong" 
                 />
               <label for="emil-2">11</label>
             </div>
             <div class="radio-group">
               <input 
                 type="radio" 
-                name="alternative" 
+                name="answer-1" 
                 id="emil-3" 
-                value="3" />
+                value="correct" />
               <label for="emil-3">3</label> 
           </fieldset>
+          <!-----------  Iris ----------->
           <fieldset>
             <legend>
               What is Iris favorite hobby?
@@ -89,29 +107,30 @@
             <div class="radio-group">
               <input 
                 type="radio" 
-                name="alternative" 
+                name="answer-2" 
                 id="iris-1" 
-                value="origami" 
+                value="wrong" 
                 />
-              <label for="Iris-1">Origami</label>
+              <label for="iris-1">Origami</label>
             </div>
             <div class="radio-group">
               <input 
                 type="radio" 
-                name="alternative" 
+                name="answer-2" 
                 id="iris-2" 
-                value="property browsing" 
+                value="correct" 
                 />
-              <label for="Iris-2">Property browsing </label>
+              <label for="iris-2">Property browsing </label>
             </div>
             <div class="radio-group">
               <input 
                 type="radio" 
-                name="alternative" 
-                id="Iris-3" 
-                value="traveling" />
+                name="answer-2" 
+                id="iris-3" 
+                value="wrong" />
               <label for="iris-3">Traveling</label> 
           </fieldset>
+          <!-----------  Jennifer  ----------->
           <fieldset>
             <legend>
               What is Jennifer's favorite color?
@@ -119,29 +138,31 @@
             <div class="radio-group">
               <input 
                 type="radio" 
-                name="alternative" 
+                name="answer-3" 
                 id="jennifer-1" 
-                value="pink" 
+                value="wrong" 
                 />
               <label for="jennifer-1">Pink</label>
             </div>
             <div class="radio-group">
               <input 
                 type="radio" 
-                name="alternative" 
+                name="answer-3" 
                 id="jennifer-2" 
-                value="blue" 
+                value="correct" 
                 />
               <label for="jennifer-2">Blue</label>
             </div>
             <div class="radio-group">
               <input 
                 type="radio" 
-                name="alternative" 
+                name="answer-3" 
                 id="jennifer-3" 
-                value="purple" />
+                value="wrong"
+                />
               <label for="jennifer-3">Purple</label>
           </fieldset>
+          <!-----------  Julia  ----------->
           <fieldset>
             <legend>
               How old is Julia?
@@ -149,41 +170,42 @@
             <div class="radio-group">
               <input 
                 type="radio" 
-                name="alternative" 
+                name="answer-4" 
                 id="julia-1" 
-                value="25" 
+                value="wrong" 
                 />
               <label for="julia-1">25</label>
             </div>
             <div class="radio-group">
               <input 
                 type="radio" 
-                name="alternative" 
+                name="answer-4" 
                 id="julia-2" 
-                value="30" 
+                value="correct" 
                 />
               <label for="julia-2">30</label>
             </div>
             <div class="radio-group">
               <input 
                 type="radio" 
-                name="alternative" 
+                name="answer-4" 
                 id="julia-3" 
-                value="35" />
+                value="wrong" />
               <label for="julia-3">35</label> 
           </fieldset>
           
-          
-          <button type="submit">Submit answer</button>
+          <!--Submit quiz button--> 
+          <button class="submit-btn" type="submit">Submit quiz</button>
         </form>
       </section>
 
+<!--quiz results thank you message--> 
       <section id="results" hidden>
-        <h2>Thank you</h2>
+        <h3>Thank you</h3>
         <div id="results-content"></div>
-      </section>   
+      </section>  
+    </main>
 
-
-  <script src="js/main.js"></script>
-</body>
+   <script src="js/main.js"></script>
+  </body>
 </html>

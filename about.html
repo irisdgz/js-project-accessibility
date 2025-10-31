@@ -7,75 +7,87 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
 <body>
-     <a class="skip-link" href="#main">Skip to main content</a>
+ <a href="#main-content" class= "skip-link">Skip to main content</a>
 
-    <header class="header"> 
-      <h1>About</h1>
-      <nav role="navigation" aria-label="Main navigation">
-        <ul class="nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html" aria-current="page">About</a></li>
-        </ul>
-      </nav>
+    <header class="site-header"> 
+      <div class="header-content">
+        <h1>About Our Team</h1>
+        <nav role="navigation" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" aria-current="page">About</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
-    <section class="header">
-      <h1>Welcome To Our Quiz</h1>
-      <h2>
-        We have created a little game for u all to try. It may seem hard but if u read the ino about us u will be just               fine. Good Luck!  
-      </h2>
-    </section>
+    <main>
+     <section class="about-intro">
+      <h2>Get to know our team</h2>
+      <p>
+       Have fun while getting to know a little more about us!  
+       Read our short bios below, and you might just find some hints for the quiz!
+      </p>
+     </section>
 
-    <div class="card-container">
-<!-- Emil -->
-            <div class="card card-info-emil">
+      <div class="card-container">
+  <!-- Emil -->
+        <div class="card card-info-emil" tabindex="0" role="group" aria-labelledby="emil-heading">
+          <div>
+          <h3 id="emil-heading">Emil Florén</h3>
+         </div>
                 <div>
-                    <h3> Emil Florén </h3>
+                  <p>I enjoy staying active and creative, whether it’s going for walks, 
+                    working out, or taking on one of my woodworking or home renovation projects. 
+                    I like keeping busy and appreciate seeing the results of my efforts. 
+                    Much of my free time is spent with my pets my dog Maya, my cat Dessie, and my rabbit Pampam. 
+                    When I get a quiet moment, I like to relax with a bit of gaming.</p>
                 </div>
-                <div>
-                    <button class="arrow left" id="prevBtn">←</button>
-                    <p>I enjoy staying active and creative, whether it’s going for walks, 
-                      working out, or taking on one of my woodworking or home renovation projects. 
-                      I like keeping busy and appreciate seeing the results of my efforts. 
-                      Much of my free time is spent with my pets my dog Maya, my cat Dessie, and my rabbit Pampam. 
-                      When I get a quiet moment, I like to relax with a bit of gaming.</p>
-                    <button class="arrow right" id="nextBtn">→</button>
-                </div>  
-            </div>                        
-<!--Iris --> 
-        <div class="card card-info-iris">
-        <div>
-        <h3> Iris</h3>
+              <button class="arrow left" id="prevBtn">←</button> 
+              <img src="./images/hundd.png" alt="">
+              <button class="arrow right" id="nextBtn">→</button>
+          </div>                               
+  <!--Iris --> 
+        <div class="card card-info-iris" tabindex="0" role="group" aria-labelledby="iris-heading">
+          <div>
+          <h3 id="iris-heading">Iris de Gracia Zhang</h3>
+          </div>
+           <div>          
+            <p>Growing up between cultures in Sweden turned me into a true third-culture kid. 
+          My impulsiveness somehow led me to coding — which I feel can be painfully hard many times.
+          It’s a big career shift from my previous path, but the challenge of building something new from scratch is 
+          pretty awsome. When my brain needs a break, I relax by scrolling through properties beyond my budget 😂.
+            </p>
+          </div>  
+          <img src="./images/IDGZ.jpg" alt="Picture of a fancy house">
         </div>
-        <div>          
-        <p>Growing up between cultures in Sweden makes a third culture child.
-           My impusiveness took me to coding, coding is difficult and I free my brain by browsing proporties 
-           I definitly can not afford!
-        </p>
-       </div>  
-       </div>
-<!-- Jennifer -->   
-        <div class="card card-info-jennifer">
-      <div>
-      <h3> Jennifer Jansson </h3>
-      </div>
-      <div>
-        <p>A Disney enthusiast who loves spending time with my friends and family, and enjoying life with my son.
-          My original plan was to become a vocal coach, but life took me in a different direction and now I’m working my way into the tech world.
-          Also, one of my most fun work experiences was when I worked as a terminal operator at Schenker, where I got to drive forklifts all day.
-        </p>
-      </div>
-      </div>
-<!-- Julia -->
-      <div class="card card-info-julia">
-        <div>
-          <h3> Julia Lindstrand </h3>
+  <!-- Jennifer -->   
+        <div class="card card-info-jennifer" tabindex="0" role="group" aria-labelledby="jennifer-heading">
+          
+          <div>
+          <h3 id="jennifer-heading">Jennifer Jansson</h3>
+          </div>
+           <div>
+            <p>A Disney enthusiast who loves spending time with my friends and family, and enjoying life with my son. 
+              My original plan was to become a vocal coach, but life took me in a different direction and now I’m working my way into the tech world. 
+              My favorite food is anything with feta cheese in it. And If you know Dory’s color in Finding Nemo, you know my favorite color.
+            </p>
+          </div>
+          <img src="./images/JJ.jpg" alt="Picture of disney castle">
         </div>
-        <div>
-         <p>Born and raised in Gothenburg but moved to the north in 2019 when I was 24 years young, wanted real winters and amazing nature. I get to see the northern lights and ski/skate as much as I want.
-          I Have really loved my 6 years here so far.</p> 
+  <!-- Julia -->
+        <div class="card card-info-julia" tabindex="0" role="group" aria-labelledby="julia-heading">
+          <div>
+            <h3 id="julia-heading">Julia Lindstrand</h3>
+          </div>
+          <div id="card-content">
+            <p>Born and raised in Gothenburg but moved to the north in 2019 when I was 24 years young, wanted real winters and amazing nature. I get to see the northern lights and ski/skate as much as I want. Although I'm not an artist myself I know that the year I was born the legend of Bob Ross passed away.
+            I Have really loved my 6 years here so far.</p> 
+          </div>
+          <img src="./images/JL.png" alt="Picture of Bob Ross">
         </div>
       </div>
-    </div>
+    </main>
+    <script src="js/about.js"></script>
   </body>
 </html>

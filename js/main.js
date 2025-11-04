@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const resultsContent = document.getElementById('results-content');
   const quizSection = document.getElementById('quiz');
   const retakeButton = document.getElementById('retake-quiz');
+  const closeResultsButton = document.getElementById('close-results');
   //Input and error
   const nameInput = document.getElementById('name')
   const emailInput = document.getElementById('email')
@@ -110,6 +111,13 @@ document.addEventListener('DOMContentLoaded', () => {
     resultsSection.setAttribute('tabindex', '-1');
     resultsSection.focus();
   });
+
+  closeResultsButton.addEventListener('click', () => {
+    resultsSection.hidden = true;
+    userInfoSection.hidden = false;
+    userInfoSection.style.display = '';  
+  });
+
   //retake quiz button
   retakeButton.addEventListener('click', () => {
     resultsSection.hidden = true;

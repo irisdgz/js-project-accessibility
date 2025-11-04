@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateImage() {
     console.log("Byter till:", images[currentIndex]);
     imgElement.src = images[currentIndex];
-    imgElement.alt = `Emil image ${currentIndex + 1}`;
+    imgElement.alt = alts[currentIndex];
   }
 
   function showPrevImage() {

@@ -52,6 +52,8 @@
                />
               <p id="email-hint" class="hint">Example: name@exapmple.com</p>
               <div id="email-error" class="error" role="alert" hidden></div>
+        </div>
+        
 
       <div class="form-control">
         <button 
@@ -82,6 +84,7 @@
                 />
               <label for="emil-1">7</label>
             </div>
+          
             <div class="radio-group">
               <input 
                 type="radio" 
@@ -201,7 +204,13 @@
 
 <!--quiz results thank you message--> 
       <section id="results" hidden>
-<button type="button" class="icon-close" aria-label="Close results">×</button>
+        <button 
+        id="close-results"
+        type="button" 
+        class="icon-close" 
+        aria-label="Close results">
+        ×
+      </button>
 
         <h3>Thank you</h3>
         <div id="results-content"></div>

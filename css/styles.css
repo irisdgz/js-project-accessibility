@@ -9,9 +9,13 @@
   --border: #84B9E4;
   --nav-hover: #4a4a7a;
   --card-hover: #0db9fd;
+  --error-color: #ff0000;
   
 }
 
+[hidden] {
+  display: none !important;
+}
 * {
   box-sizing: border-box
 }
@@ -51,10 +55,9 @@ body {
 /*Navigation bar*/
 .site-header {
   background: var(--bg);
-  border-bottom: px solid var(--border);
+  border-bottom: 1px solid var(--border);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
-  
-
+  width: 100%;
 }
 
 .site-header h1 {
@@ -95,17 +98,19 @@ a:hover {
 
 /* Form */
 .user-info {
-  display: flex;
+ display: flex;
   flex-direction: column;
   align-items: center;
+  width: 350px;
   border: 2px solid #38bdf8;
+  margin: 3rem auto 0;
   border-radius: 10px;
   color: #38bdf8;
-  padding: 24px 16px;   
-  margin: 32px 16px;    
-  box-sizing: border-box;
 }
 
+.user-info p {
+  color: #f8fafc;
+}
 
 #user-info-form {
   color: #f8fafc;
@@ -115,7 +120,28 @@ a:hover {
   display: flex;
   flex-direction: column;
   padding-bottom: 20px;
-  
+}
+
+.form-control input:focus {
+  outline: none;
+  border-color: var(--link);
+  box-shadow: 0 0 0 3px var(--focus-ring-color);
+}
+
+.form-control input[aria-invalid='true'] {
+  border-color: var(--error-color);
+}
+
+.error {
+  color: var(--error-color);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.hint {
+  color: var(--text);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
 }
 
 .submit-btn {
@@ -169,7 +195,7 @@ a:hover {
     
 .card-info-emil .arrow {
   position: absolute;
-  top: 50%;
+  top: 80%;
   transform: translateY(-50%);
   background-color: rgba(0,0,0,0.5);
   color: white;
@@ -220,7 +246,6 @@ img {
 
 .card-info-iris {
     position: relative;
-    /*background-image: url(images/home.png);*/
     background-size: cover;
     background-position: center;
 }
@@ -231,7 +256,6 @@ img {
 }
 
 .card-info-jennifer {
-  /*background-image: url(/images/JJ.jpg);*/
   background-size: cover;
   background-position: center;
 }
@@ -251,15 +275,17 @@ img {
   box-shadow: 0 16px 38px orange;
 }
 
-@media (min-width: 668px) and (max-width: 1099px) {
+@media (min-width: 668px) and (max-width: 1269px) {
   .card-container {
       grid-template-columns: repeat(2, 1fr);
+          justify-items: center;
     }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1270px) {
   .card-container {
     grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
   }
 }
 
@@ -272,7 +298,7 @@ img {
 
 /* Quiz Section Styles */
 #quiz:not([hidden]) {
-  display: block;
+  display: flex;
   flex-direction: column;
   align-items: center;
   padding: 24px 16px;
@@ -300,6 +326,7 @@ fieldset {
   padding: 16px 20px;
   margin-bottom: 26px;
   box-sizing: border-box;
+  max-width: 400px;
 }
 
 /* Legends (question titles) */
@@ -328,5 +355,23 @@ legend {
   font-size: 17px;
   color: var(--text);
 
+}
+
+#results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  padding-bottom: 20px;
+  border: 2px solid #38bdf8;
+  margin: 4rem auto 0;
+  border-radius: 10px;
+  color: #38bdf8;
+}
+
+#results-content {
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 10px;
 }
 

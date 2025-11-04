@@ -5,14 +5,20 @@ document.addEventListener("DOMContentLoaded", () => {
     "./images/kanin.png"
   ];
 
-  let currentIndex = 0;
+    const alts = [
+    "Maya – Emils hund",
+    "Dessie – Emils katt",
+    "Pampam – Emils kanin"
+  ];
 
   const imgElement = document.querySelector(".card-info-emil img");
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
  
+  let currentIndex = 0;
+
   if (!imgElement) {
-    console.warn("Ingen <img> hittades i .card-info-emil — bildspelet körs inte.");
+    console.warn("No <img> found .card-info-emil — The slideshow is not running.");
     return;
   }
 

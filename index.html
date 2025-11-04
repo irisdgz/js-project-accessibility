@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Title</title>
     <link rel="stylesheet" href="css/styles.css" />
+
   </head>
   <body>
  <a href="#main-content" class= "skip-link">Skip to main content</a>
@@ -200,9 +201,17 @@
 
 <!--quiz results thank you message--> 
       <section id="results" hidden>
+<button type="button" class="icon-close" aria-label="Close results">×</button>
+
         <h3>Thank you</h3>
         <div id="results-content"></div>
-        <button id="retake-quiz" value="retake" class="submit-btn" type="button">Retake quiz</button>
+        <button 
+          id="retake-quiz" 
+          value="retake" 
+          class="submit-btn" 
+          type="button">
+          Retake quiz
+        </button>
       </section>    
     </main>
 

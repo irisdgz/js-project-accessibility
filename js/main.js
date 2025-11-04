@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     resultsSection.hidden = false; // display results
     resultsContent.textContent = message;
 
-    // // set focus to results
+    // set focus to results
     resultsSection.setAttribute('tabindex', '-1');
     resultsSection.focus();
   });

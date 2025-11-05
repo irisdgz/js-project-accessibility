@@ -21,11 +21,13 @@
 }
 
 body {
+  padding: 0;
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6
+  
 }
 
 /* Skip link with enhanced visibility */
@@ -58,11 +60,13 @@ body {
   border-bottom: 1px solid var(--border);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
   width: 100%;
+  
 }
 
 .site-header h1 {
   font-size: 30px;
-  padding: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-list {
@@ -98,14 +102,17 @@ a:hover {
 
 /* Form */
 .user-info {
- display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  width: 350px;
+  width: 100%;
+  max-width: min(90%, 900px);
   border: 2px solid #38bdf8;
-  margin: 3rem auto 0;
+  margin: 3rem auto 0; 
   border-radius: 10px;
   color: #38bdf8;
+  padding: 20px 30px;
+  box-sizing: border-box;
 }
 
 .user-info p {
@@ -123,9 +130,7 @@ a:hover {
 }
 
 .form-control input:focus {
-  outline: none;
-  border-color: var(--link);
-  box-shadow: 0 0 0 3px var(--focus-ring-color);
+  border-color: var(--focus-outline);
 }
 
 .form-control input[aria-invalid='true'] {
@@ -172,7 +177,6 @@ a:hover {
 
 .card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   padding: 20px;
 }
@@ -277,25 +281,30 @@ img {
   box-shadow: 0 16px 38px orange;
 }
 
-@media (min-width: 668px) and (max-width: 1269px) {
-  .card-container {
-      grid-template-columns: repeat(2, 1fr);
-          justify-items: center;
-    }
-}
-
-@media (min-width: 1270px) {
-  .card-container {
-    grid-template-columns: repeat(4, 1fr);
-        justify-items: center;
-  }
-}
 
 @media (max-width: 619px) {
   .card-container {
     grid-template-columns: repeat(1, 1fr);
     justify-items: center;
-    
+  }
+
+  .user-info,
+  fieldset {
+    padding: 16px;
+  }
+}
+
+@media (min-width: 620px) and (max-width: 1269px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+}
+
+@media (min-width: 1270px) {
+  .card-container {
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
   }
 }
 
@@ -303,17 +312,18 @@ img {
 #quiz:not([hidden]) {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   padding: 24px 16px;
   margin-top: 32px;
-  line-height: 1.;
+  line-height: 1.4;
   color: var(--text);
   text-align: left;
   width: 100%;
 }
 
 #quiz h2 {
-  margin-bottom: 28px; /* space below title */
+  margin-bottom: 28px;
+  /* space below title */
   font-size: 22px;
   letter-spacing: 0.4px;
   color: var(--text);
@@ -324,12 +334,32 @@ img {
 /* Fieldsets (boxes around questions) */
 fieldset {
   width: 100%;
+  max-width: 100%;
   border: 2px solid var(--link);
   border-radius: 10px;
-  padding: 16px 20px;
-  margin-bottom: 26px;
+  padding: 20px 30px;
+  margin:0 auto 26px;
   box-sizing: border-box;
-  max-width: 400px;
+  
+}
+
+/* Make fieldsets expand on large screens */
+@media (min-width: 900px) {
+  fieldset {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  #quiz {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  #quiz:not([hidden]) h2 {
+    align-items: stretch;
+  }
 }
 
 /* Legends (question titles) */
@@ -344,12 +374,14 @@ legend {
 .radio-group {
   display: flex;
   align-items: center;
-  gap: 12px; /* space between radio and label */
-  margin: 20px 0; /* space between each option */
+  gap: 12px;
+  /* space between radio and label */
+  margin: 20px 0;
+  /* space between each option */
 }
 
 .radio-group input[type="radio"] {
-  transform: scale(1.25); 
+  transform: scale(1.25);
   accent-color: var(--link);
   cursor: pointer;
 }
@@ -384,7 +416,7 @@ legend {
   flex-direction: column;
   align-items: center;
   width: 90%;
-  max-width: 400px;
+  max-width: min(90%, 900px);
   padding-top: 20px;
   padding-bottom: 20px;
   border: 2px solid #38bdf8;
@@ -410,6 +442,13 @@ legend {
   white-space:nowrap;
   border:0;
 }
+main {
+  max-width: none;
+  margin: 0 auto;
+}
+
+
+
 /* CCS implementation */
 /*@media (prefers-reduced-motion: reduce) {
   * {

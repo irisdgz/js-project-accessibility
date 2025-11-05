@@ -166,7 +166,11 @@ document.addEventListener('DOMContentLoaded', () => {
   closeResultsButton.addEventListener('click', () => {
     resultsSection.hidden = true;
     userInfoSection.hidden = false;
-    userInfoSection.style.display = '';  
+    userInfoSection.style.display = '';
+    quizQuestions.reset(); // reset quiz
+    userInfoForm.reset(); // reset user info values
+    nameInput = ''
+    emailInput = ''
   });
 
   //retake quiz button

@@ -7,13 +7,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const quizSection = document.getElementById('quiz');
   const retakeButton = document.getElementById('retake-quiz');
   const closeResultsButton = document.getElementById('close-results');
+  
   //Input and error
   const nameInput = document.getElementById('name')
   const emailInput = document.getElementById('email')
   const nameError = document.getElementById('name-error')
   const emailError = document.getElementById('email-error')
-
+  
   let userName = '';
+
+
+  // Progress bar 
+  /* 
+  const progressFill = document.querySelector('.progress-fill');
+  const progressText = document.querySelector('.progress-text');
+  let answeredQuestions = new Set();
+
+
+  //Aria-live announcer
+  /*const announcer = document.getElementById('announcer');*/
+
+
+ 
   function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); //has to be a real email
   }
@@ -30,7 +45,41 @@ document.addEventListener('DOMContentLoaded', () => {
     errorElement.hidden = true;
   }
 
-  nameInput.addEventListener('input', () => {
+ /* function announce(message) {
+    announcer.textContent = '';
+    
+    setTimeout(() => {
+    announcer.textContent = message;
+    }, 100); 
+  }*/
+
+  /*function updateProgress() {
+    const totalQuestions = 4;
+    const answeredCount = answeredQuestions.size;
+    const percentage = (answeredCount / totalQuestions) * 100;
+
+    progressFill.style.width = `${percentage}%`;
+    progressText.textContent = `${answeredCount} of ${totalQuestions} questions answered`;
+  }
+    announce(progressText.textContent);
+    
+    // Track answers and move focus to next question
+    document.querySelectorAll('input[type="radio"]').forEach(input => {
+    input.addEventListener('change', () => {
+      answeredQuestions.add(input.name);
+      updateProgress();
+
+    // Move focus to next fieldset
+      const currentFieldset = input.closest('fieldset');
+      const nextFieldset = currentFieldset.nextElementSibling;
+
+      if (nextFieldset && nextFieldset.querySelector('input')) {
+        nextFieldset.querySelector('input').focus();
+      }
+    });
+  });*/
+  
+    nameInput.addEventListener('input', () => {
     if (nameInput.value.trim()) {
       clearError(nameInput, nameError);
     }
@@ -59,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clearError(nameInput, nameError)
     }
 
-    // Valid email
+    // Validate email
     if (!emailInput.value.trim()) {
       showError(emailInput, emailError, 'please enter you email address')
       isValid = false;
@@ -82,6 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
       userInfoSection.style.display = 'none';
       quizSection.hidden = false; //display quiz
       quizSection.scrollIntoView({ behavior: 'smooth' });
+  
     }
   });
 
@@ -93,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const answers = Array.from(formData.values());
     const total = answers.length; // Count how many are correct
     const correct = answers.filter(value => value === "correct").length;
+  
 
     // Create message for the user
     const message = `${userName ? userName + ', ' : ''}you got ${correct} out of ${total} answers correct, ${correct === total
@@ -107,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
     resultsSection.hidden = false; // display results
     resultsContent.textContent = message;
 
-    // set focus to results
+    // Set focus to results
     resultsSection.setAttribute('tabindex', '-1');
     resultsSection.focus();
   });
@@ -123,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
     resultsSection.hidden = true;
     quizSection.hidden = false;
     quizSection.scrollIntoView({ behavior: 'smooth' });
-    // reset quiz
+  // reset quiz
     quizQuestions.reset();
   });
 });

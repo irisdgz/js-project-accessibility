@@ -34,7 +34,8 @@
             <input 
               type="text" 
               id="name" 
-              name="name" 
+              name="name"
+              autocomplete="on" 
               aria-required="true"
               aria-describedby="name-error"
                />
@@ -46,6 +47,7 @@
               type="email" 
               id="email" 
               name="email" 
+              autocomplete="on" 
               aria-required="true"
               placeholder ="Example: name@example.com"
               aria-describedby="email-hint email-error"
@@ -64,6 +66,23 @@
       </div>
     </form>
   </section>
+
+<!-- Progress bar -->
+    <!--
+    <div class="progress" aria-label="Quiz progress">
+        <div class="progress-fill"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0">
+      </div>
+    </div>
+      <p class="progress-text" aria-live="polite">
+        0 of 4 questions answered
+    </p>
+    
+    <div id="announcer" aria-live="polite" class="sr-only"></div>-->
+
 
  <!--Quiz-->
       <section id="quiz" hidden>
@@ -101,6 +120,7 @@
                 id="emil-3" 
                 value="correct" />
               <label for="emil-3">3</label> 
+            </div>
           </fieldset>
           <!-----------  Iris ----------->
           <fieldset>
@@ -132,6 +152,7 @@
                 id="iris-3" 
                 value="wrong" />
               <label for="iris-3">Traveling</label> 
+            </div>
           </fieldset>
           <!-----------  Jennifer  ----------->
           <fieldset>
@@ -164,6 +185,7 @@
                 value="wrong"
                 />
               <label for="jennifer-3">Purple</label>
+            </div>
           </fieldset>
           <!-----------  Julia  ----------->
           <fieldset>
@@ -195,6 +217,7 @@
                 id="julia-3" 
                 value="wrong" />
               <label for="julia-3">35</label> 
+            </div>
           </fieldset>
           
           <!--Submit quiz button--> 
@@ -221,7 +244,8 @@
           type="button">
           Retake quiz
         </button>
-      </section>    
+      </section>
+         
     </main>
 
    <script src="js/main.js"></script>

@@ -5,7 +5,7 @@
   --muted: #cbd5e1;
   --link: #38bdf8;
   --accent: #22c55e;
-  --focus-outline: 1px solid var(--link);
+  --focus-outline: 2px solid var(--link);
   --border: #84B9E4;
   --nav-hover: #4a4a7a;
   --card-hover: #0db9fd;
@@ -170,28 +170,30 @@ a:hover {
   color: var(--text);
 }
 
-
 .card-container {
   display: grid;
-  justify-content: center;
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
   padding: 20px;
 }
 
 
 .card {
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    width: 300px;
-    height: auto;
-    color: white;
-    border: 1px solid #AE8625;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.8);
-    padding: 20px;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: 0 auto;
+  color: white;
+  border: 1px solid #AE8625;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  overflow: hidden;
 }
+
     
 .card-info-emil .arrow {
   position: absolute;
@@ -293,6 +295,7 @@ img {
   .card-container {
     grid-template-columns: repeat(1, 1fr);
     justify-items: center;
+    
   }
 }
 
@@ -303,7 +306,7 @@ img {
   align-items: center;
   padding: 24px 16px;
   margin-top: 32px;
-  line-height: 1;
+  line-height: 1.;
   color: var(--text);
   text-align: left;
   width: 100%;
@@ -372,7 +375,7 @@ legend {
 
 .icon-close:focus-visible { 
   outline:var(--focus-outline); 
-  outline-offset:2px; 
+  outline-offset:2px;
 }
 
 
@@ -382,6 +385,7 @@ legend {
   align-items: center;
   width: 90%;
   max-width: 400px;
+  padding-top: 20px;
   padding-bottom: 20px;
   border: 2px solid #38bdf8;
   margin: 4rem auto 0;
@@ -406,3 +410,37 @@ legend {
   white-space:nowrap;
   border:0;
 }
+/* CCS implementation */
+/*@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Progress Bar 
+.progress {
+  width: 90%;
+  max-width: 400px;
+  height: 14px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin: 1rem auto;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--accent);
+  width: 0%;
+  transition: width 0.3s;
+}
+
+.progress-text {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--text);
+  font-size: 15px;
+}*/

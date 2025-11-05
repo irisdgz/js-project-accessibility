@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
     const alts = [
-    "Maya – Emils hund",
-    "Dessie – Emils katt",
-    "Pampam – Emils kanin"
+    "Maya – Emils dog",
+    "Dessie – Emils cat",
+    "Pampam – Emils bunny"
   ];
 
   const imgElement = document.querySelector(".card-info-emil img");

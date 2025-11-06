@@ -23,7 +23,7 @@
       </div>
     </header>
 
-  <!--information form-->
+  <!--Information form-->
     <main id="main-content">
         <section class="user-info">
           <h2>Your information</h2>
@@ -52,10 +52,9 @@
                   placeholder ="Example: name@example.com"
                   aria-describedby="email-hint email-error"
                   />
-                  <p id="email-hint" class="hint">Example: name@exapmple.com</p>
+                  <p id="email-hint" class="hint">Example: name@example.com</p>
                   <div id="email-error" class="error" role="alert" aria-live="assertive" hidden></div>
             </div>
-            
 
           <div class="form-control">
             <button 
@@ -81,10 +80,10 @@
                     type="radio" 
                     name="answer-1" 
                     id="emil-1" 
-                    value="wrong" 
+                    value="correct" 
                     required
                     />
-                  <label for="emil-1">7</label>
+                  <label for="emil-1">3</label>
                 </div>
               
                 <div class="radio-group">
@@ -94,15 +93,15 @@
                     id="emil-2" 
                     value="wrong" 
                     />
-                  <label for="emil-2">11</label>
+                  <label for="emil-2">7</label>
                 </div>
                 <div class="radio-group">
                   <input 
                     type="radio" 
                     name="answer-1" 
                     id="emil-3" 
-                    value="correct" />
-                  <label for="emil-3">3</label> 
+                    value="wrong" />
+                  <label for="emil-3">11</label> 
                 </div>
               </fieldset>
               <!-----------  Iris ----------->
@@ -182,24 +181,24 @@
                     id="julia-1" 
                     value="wrong" 
                     />
-                  <label for="julia-1">25</label>
+                  <label for="julia-1">20</label>
                 </div>
                 <div class="radio-group">
                   <input 
                     type="radio" 
-                    name="answer-4" 
+                    name="answer-4"
                     id="julia-2" 
-                    value="correct" 
+                    value="wrong" 
                     />
-                  <label for="julia-2">30</label>
+                  <label for="julia-2">25</label>
                 </div>
                 <div class="radio-group">
                   <input 
                     type="radio" 
                     name="answer-4" 
                     id="julia-3" 
-                    value="wrong" />
-                  <label for="julia-3">35</label> 
+                    value="correct" />
+                  <label for="julia-3">30</label> 
                 </div>
               </fieldset>
               
@@ -208,7 +207,7 @@
             </form>
           </section>
 
-    <!--quiz results thank you message--> 
+    <!--Quiz results thank you message--> 
     <section id="results" hidden aria-live="assertive">
             <h3>Good job, your quiz results:</h3>
             <div id="results-content"></div>

@@ -20,9 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
   /*const announcer = document.getElementById('announcer');*/
 
 
- 
   function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); //has to be a real email
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); // Has to be a real email
   }
 
   function showError(input, errorElement, message) {
@@ -36,8 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     errorElement.textContent = '';
     errorElement.hidden = true;
   }
-
-
   
     nameInput.addEventListener('input', () => {
     if (nameInput.value.trim()) {
@@ -55,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Show quiz after user put in user info
   userInfoForm.addEventListener('submit', (e) => {
-    e.preventDefault(); // stop the from from reloading the page
+    e.preventDefault(); // Stop the from from reloading the page
 
     let isValid = true;
 
@@ -70,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Validate email
     if (!emailInput.value.trim()) {
-      showError(emailInput, emailError, 'please enter you email address')
+      showError(emailInput, emailError, 'Please enter you email address')
       isValid = false;
       if (!nameError.textContent) {
         emailInput.focus();
@@ -89,13 +86,12 @@ document.addEventListener('DOMContentLoaded', () => {
       userName = document.getElementById('name').value.trim();
       userInfoSection.hidden = true; // Hide user info box
       userInfoSection.style.display = 'none';
-      quizSection.hidden = false; //display quiz
+      quizSection.hidden = false; // Display quiz
       quizSection.scrollIntoView({ behavior: 'smooth' });
-  
     }
   });
 
-  //submission
+  // Submission
   quizQuestions.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -116,30 +112,30 @@ document.addEventListener('DOMContentLoaded', () => {
       
     // Display result
     quizSection.hidden = true; // Hide quiz section after submit
-    resultsSection.hidden = false; // display results
+    resultsSection.hidden = false; // Display results
     resultsContent.textContent = message;
 
     // Set focus to results
     resultsSection.setAttribute('tabindex', '-1');
     resultsSection.focus();
   });
-
+  //close quiz button and return to home page/user form
   closeResultsButton.addEventListener('click', () => {
     resultsSection.hidden = true;
     userInfoSection.hidden = false;
     userInfoSection.style.display = '';
-    quizQuestions.reset(); // reset quiz
-    userInfoForm.reset(); // reset user info values
-    nameInput = ''
-    emailInput = ''
+    quizQuestions.reset(); // Reset quiz
+    userInfoForm.reset(); // Reset user info values
+    nameInput.value = ''
+    emailInput. value= ''
   });
 
-  //retake quiz button
+  // Retake quiz button
   retakeButton.addEventListener('click', () => {
     resultsSection.hidden = true;
     quizSection.hidden = false;
     quizSection.scrollIntoView({ behavior: 'smooth' });
-  // reset quiz
+  // Reset quiz
     quizQuestions.reset();
   });
 });

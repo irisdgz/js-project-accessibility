@@ -16,14 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
   let userName = '';
 
-
-  // Progress bar 
-  /* 
-  const progressFill = document.querySelector('.progress-fill');
-  const progressText = document.querySelector('.progress-text');
-  let answeredQuestions = new Set();
-
-
   //Aria-live announcer
   /*const announcer = document.getElementById('announcer');*/
 
@@ -45,39 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     errorElement.hidden = true;
   }
 
- /* function announce(message) {
-    announcer.textContent = '';
-    
-    setTimeout(() => {
-    announcer.textContent = message;
-    }, 100); 
-  }*/
 
-  /*function updateProgress() {
-    const totalQuestions = 4;
-    const answeredCount = answeredQuestions.size;
-    const percentage = (answeredCount / totalQuestions) * 100;
-
-    progressFill.style.width = `${percentage}%`;
-    progressText.textContent = `${answeredCount} of ${totalQuestions} questions answered`;
-  }
-    announce(progressText.textContent);
-    
-    // Track answers and move focus to next question
-    document.querySelectorAll('input[type="radio"]').forEach(input => {
-    input.addEventListener('change', () => {
-      answeredQuestions.add(input.name);
-      updateProgress();
-
-    // Move focus to next fieldset
-      const currentFieldset = input.closest('fieldset');
-      const nextFieldset = currentFieldset.nextElementSibling;
-
-      if (nextFieldset && nextFieldset.querySelector('input')) {
-        nextFieldset.querySelector('input').focus();
-      }
-    });
-  });*/
   
     nameInput.addEventListener('input', () => {
     if (nameInput.value.trim()) {
@@ -153,6 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         : 'better luck next time!'
       }`;
 
+      
     // Display result
     quizSection.hidden = true; // Hide quiz section after submit
     resultsSection.hidden = false; // display results

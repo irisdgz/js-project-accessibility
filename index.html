@@ -14,7 +14,7 @@
     <header class="site-header"> 
       <div class="header-content">
       <h1>Welcome to our Quiz</h1>
-      <nav role="navigation" aria-label="Main navigation">
+      <nav aria-label="Main navigation">
         <ul class="nav-list">
           <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="about.html">About us</a></li>
@@ -23,230 +23,217 @@
       </div>
     </header>
 
- <!--information form-->
-<main id="main-content">
-    <section class="user-info">
-      <h2>Your information</h2>
-      <p >Enter requested details to continue to the quiz</p>
-      <form id="user-info-form">
-        <div class="form-control">
-          <label for="name">Name:</label>
-            <input 
-              type="text" 
-              id="name" 
-              name="name"
-              autocomplete="on" 
-              aria-required="true"
-              aria-describedby="name-error"
-               />
-               <div id="name-error" class="error" role="alert" hidden></div>
-        </div>
+  <!--information form-->
+    <main id="main-content">
+        <section class="user-info">
+          <h2>Your information</h2>
+          <p >Enter requested details to continue to the quiz</p>
+          <form id="user-info-form">
+            <div class="form-control">
+              <label for="name">Name:</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name"
+                  autocomplete="on" 
+                  aria-required="true"
+                  aria-describedby="name-error"
+                  />
+                  <div id="name-error" class="error" role="alert" aria-live="assertive" hidden></div>
+            </div>
+              <div class="form-control">
+                <label for="email">Email:</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  autocomplete="on" 
+                  aria-required="true"
+                  placeholder ="Example: name@example.com"
+                  aria-describedby="email-hint email-error"
+                  />
+                  <p id="email-hint" class="hint">Example: name@exapmple.com</p>
+                  <div id="email-error" class="error" role="alert" aria-live="assertive" hidden></div>
+            </div>
+            
+
           <div class="form-control">
-            <label for="email">Email:</label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email" 
-              autocomplete="on" 
-              aria-required="true"
-              placeholder ="Example: name@example.com"
-              aria-describedby="email-hint email-error"
-               />
-              <p id="email-hint" class="hint">Example: name@exapmple.com</p>
-              <div id="email-error" class="error" role="alert" hidden></div>
-        </div>
-        
-
-      <div class="form-control">
-        <button 
-          class="submit-btn" 
-          type="submit">
-          Continue to quiz
-      </button>
-      </div>
-    </form>
-  </section>
-
-<!-- Progress bar -->
-    <!--
-    <div class="progress" aria-label="Quiz progress">
-        <div class="progress-fill"
-          role="progressbar"
-          aria-valuemin="0"
-          aria-valuemax="100"
-          aria-valuenow="0">
-      </div>
-    </div>
-      <p class="progress-text" aria-live="polite">
-        0 of 4 questions answered
-    </p>
-    
-    <div id="announcer" aria-live="polite" class="sr-only"></div>-->
-
-
- <!--Quiz-->
-      <section id="quiz" hidden>
-        <h2>Quick Quiz</h2>
-        <form id="quiz-questions">
-          <fieldset>
-            <!-----------  Emil  ----------->
-            <legend>
-              How many animals does Emil have?
-            </legend>
-            <div class="radio-group">
-              <input 
-                type="radio" 
-                name="answer-1" 
-                id="emil-1" 
-                value="wrong" 
-                required
-                />
-              <label for="emil-1">7</label>
-            </div>
-          
-            <div class="radio-group">
-              <input 
-                type="radio" 
-                name="answer-1" 
-                id="emil-2" 
-                value="wrong" 
-                />
-              <label for="emil-2">11</label>
-            </div>
-            <div class="radio-group">
-              <input 
-                type="radio" 
-                name="answer-1" 
-                id="emil-3" 
-                value="correct" />
-              <label for="emil-3">3</label> 
-            </div>
-          </fieldset>
-          <!-----------  Iris ----------->
-          <fieldset>
-            <legend>
-              What is Iris favorite hobby?
-            </legend>
-            <div class="radio-group">
-              <input 
-                type="radio" 
-                name="answer-2" 
-                id="iris-1" 
-                value="wrong" 
-                />
-              <label for="iris-1">Origami</label>
-            </div>
-            <div class="radio-group">
-              <input 
-                type="radio" 
-                name="answer-2" 
-                id="iris-2" 
-                value="correct" 
-                />
-              <label for="iris-2">Property browsing </label>
-            </div>
-            <div class="radio-group">
-              <input 
-                type="radio" 
-                name="answer-2" 
-                id="iris-3" 
-                value="wrong" />
-              <label for="iris-3">Traveling</label> 
-            </div>
-          </fieldset>
-          <!-----------  Jennifer  ----------->
-          <fieldset>
-            <legend>
-              What is Jennifer's favorite color?
-            </legend>
-            <div class="radio-group">
-              <input 
-                type="radio" 
-                name="answer-3" 
-                id="jennifer-1" 
-                value="wrong" 
-                />
-              <label for="jennifer-1">Pink</label>
-            </div>
-            <div class="radio-group">
-              <input 
-                type="radio" 
-                name="answer-3" 
-                id="jennifer-2" 
-                value="correct" 
-                />
-              <label for="jennifer-2">Blue</label>
-            </div>
-            <div class="radio-group">
-              <input 
-                type="radio" 
-                name="answer-3" 
-                id="jennifer-3" 
-                value="wrong"
-                />
-              <label for="jennifer-3">Purple</label>
-            </div>
-          </fieldset>
-          <!-----------  Julia  ----------->
-          <fieldset>
-            <legend>
-              How old is Julia?
-            </legend>
-            <div class="radio-group">
-              <input 
-                type="radio" 
-                name="answer-4" 
-                id="julia-1" 
-                value="wrong" 
-                />
-              <label for="julia-1">25</label>
-            </div>
-            <div class="radio-group">
-              <input 
-                type="radio" 
-                name="answer-4" 
-                id="julia-2" 
-                value="correct" 
-                />
-              <label for="julia-2">30</label>
-            </div>
-            <div class="radio-group">
-              <input 
-                type="radio" 
-                name="answer-4" 
-                id="julia-3" 
-                value="wrong" />
-              <label for="julia-3">35</label> 
-            </div>
-          </fieldset>
-          
-          <!--Submit quiz button--> 
-          <button class="submit-btn" type="submit">Submit quiz</button>
+            <button 
+              class="submit-btn" 
+              type="submit">
+              Continue to quiz
+          </button>
+          </div>
         </form>
       </section>
 
-<!--quiz results thank you message--> 
-      <section id="results" hidden>
-        <button 
-        id="close-results"
-        type="button" 
-        class="icon-close" 
-        aria-label="Close results">
-        ×
-      </button>
+    <!--Quiz-->
+          <section id="quiz" hidden aria-live="polite">
+            <h2>Quick Quiz</h2>
+            <form id="quiz-questions">
+              <fieldset>
+                <!-----------  Emil  ----------->
+                <legend>
+                  How many animals does Emil have?
+                </legend>
+                <div class="radio-group">
+                  <input 
+                    type="radio" 
+                    name="answer-1" 
+                    id="emil-1" 
+                    value="wrong" 
+                    required
+                    />
+                  <label for="emil-1">7</label>
+                </div>
+              
+                <div class="radio-group">
+                  <input 
+                    type="radio" 
+                    name="answer-1" 
+                    id="emil-2" 
+                    value="wrong" 
+                    />
+                  <label for="emil-2">11</label>
+                </div>
+                <div class="radio-group">
+                  <input 
+                    type="radio" 
+                    name="answer-1" 
+                    id="emil-3" 
+                    value="correct" />
+                  <label for="emil-3">3</label> 
+                </div>
+              </fieldset>
+              <!-----------  Iris ----------->
+              <fieldset>
+                <legend>
+                  What is Iris favorite hobby?
+                </legend>
+                <div class="radio-group">
+                  <input 
+                    type="radio" 
+                    name="answer-2" 
+                    id="iris-1" 
+                    value="wrong" 
+                    />
+                  <label for="iris-1">Origami</label>
+                </div>
+                <div class="radio-group">
+                  <input 
+                    type="radio" 
+                    name="answer-2" 
+                    id="iris-2" 
+                    value="correct" 
+                    />
+                  <label for="iris-2">Property browsing </label>
+                </div>
+                <div class="radio-group">
+                  <input 
+                    type="radio" 
+                    name="answer-2" 
+                    id="iris-3" 
+                    value="wrong" />
+                  <label for="iris-3">Traveling</label> 
+                </div>
+              </fieldset>
+              <!-----------  Jennifer  ----------->
+              <fieldset>
+                <legend>
+                  What is Jennifer's favorite color?
+                </legend>
+                <div class="radio-group">
+                  <input 
+                    type="radio" 
+                    name="answer-3" 
+                    id="jennifer-1" 
+                    value="wrong" 
+                    />
+                  <label for="jennifer-1">Pink</label>
+                </div>
+                <div class="radio-group">
+                  <input 
+                    type="radio" 
+                    name="answer-3" 
+                    id="jennifer-2" 
+                    value="correct" 
+                    />
+                  <label for="jennifer-2">Blue</label>
+                </div>
+                <div class="radio-group">
+                  <input 
+                    type="radio" 
+                    name="answer-3" 
+                    id="jennifer-3" 
+                    value="wrong"
+                    />
+                  <label for="jennifer-3">Purple</label>
+                </div>
+              </fieldset>
+              <!-----------  Julia  ----------->
+              <fieldset>
+                <legend>
+                  How old is Julia?
+                </legend>
+                <div class="radio-group">
+                  <input 
+                    type="radio" 
+                    name="answer-4" 
+                    id="julia-1" 
+                    value="wrong" 
+                    />
+                  <label for="julia-1">25</label>
+                </div>
+                <div class="radio-group">
+                  <input 
+                    type="radio" 
+                    name="answer-4" 
+                    id="julia-2" 
+                    value="correct" 
+                    />
+                  <label for="julia-2">30</label>
+                </div>
+                <div class="radio-group">
+                  <input 
+                    type="radio" 
+                    name="answer-4" 
+                    id="julia-3" 
+                    value="wrong" />
+                  <label for="julia-3">35</label> 
+                </div>
+              </fieldset>
+              
+              <!--Submit quiz button--> 
+              <button class="submit-btn" type="submit">Submit quiz</button>
+            </form>
+          </section>
 
-        <h3>Thank you</h3>
-        <div id="results-content"></div>
-        <button 
-          id="retake-quiz" 
-          value="retake" 
-          class="submit-btn" 
-          type="button">
-          Retake quiz
-        </button>
-      </section>
-         
+    <!--quiz results thank you message--> 
+    <section id="results" hidden aria-live="assertive">
+            <h3>Good job, your quiz results:</h3>
+            <div id="results-content"></div>
+            <div class="buttons-container">
+            <button 
+              id="retake-quiz" 
+              value="retake" 
+              class="submit-btn" 
+              type="button">
+              Retake quiz
+            </button>
+            <button 
+            id="close-results"
+            type="button" 
+            class="submit-btn" 
+            aria-label="Close results">
+            Close quiz
+          </button>
+          </div>
+          </section>
     </main>
+
+    <footer>
+      <p>&copy; 2025 Quiz App</p> 
+    </footer>
 
    <script src="js/main.js"></script>
   </body>

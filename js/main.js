@@ -16,9 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
   let userName = '';
 
-  //Aria-live announcer
-  /*const announcer = document.getElementById('announcer');*/
-
 
   function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); // Has to be a real email
